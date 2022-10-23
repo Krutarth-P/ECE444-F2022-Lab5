@@ -31,7 +31,11 @@
       </p> 
       <p>
       {{ render_field(form.search) }}
-      </p></dl>
+      </p>
+      <p>
+        {{ render_field(form.selectMinors) }}
+      </p>
+    </dl>
     <p>{{render_field(form.top)}} 
       <button type="submit" value="Search" class="btn btn-primary common-page-submit-btn">Search</button>
     </p></form>

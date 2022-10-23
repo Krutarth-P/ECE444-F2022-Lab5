@@ -7,9 +7,12 @@ from collections import defaultdict
 from scipy.sparse import load_npz
 from sklearn.metrics.pairwise import cosine_similarity
 from flask import Flask, render_template, request, redirect
-from wtforms import Form, StringField, SelectField
+from wtforms import Form, StringField, SelectField, widgets, SelectMultipleField
 
 """Build the search form, including dropdown menus at the top of the page, from the main datafile."""
+class MultiCheckboxField(SelectMultipleField):
+    widget = widgets.ListWidget(prefix_label=False)
+    option_widget = widgets.CheckboxInput()
 class CourseSearchForm(Form):
     df = pd.read_pickle('resources/df_processed.pickle').set_index('Code')
     divisions = [('Any','Any')] + sorted([
@@ -33,12 +36,17 @@ class CourseSearchForm(Form):
         ('25','25'),
         ('50','50')
     ]
+    minors = [('Advanced Manufacturing','Advanced Manufacturing'),('Artificial Intelligence Engineering','Artificial Intelligence Engineering'),
+     ('Engineering Business','Engineering Business'),('Nanoengineering','Nanoengineering'), ('Bioengineering','Bioengineering'),
+      ('Mechatronics and Robotics Minor','Mechatronics and Robotics Minor')
+      ]
     select = SelectField('Course Year:', choices=year_choices)
     top = SelectField('',choices=top)
     divisions = SelectField('Division:', choices=divisions)
     departments = SelectField('Department:', choices=departments)
     campuses = SelectField('Campus:', choices=campus)
     search = StringField('Search Terms:')
+    selectMinors= MultiCheckboxField('Desired Minors', choices=minors)
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
