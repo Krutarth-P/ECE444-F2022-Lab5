@@ -1,5 +1,20 @@
 # CARTE Education Pathways
 Krutarth Patel and Priscilla Deng. This repo is a clone of https://github.com/nelaturuk/education_pathways.
+
+## Activity 1
+![](screenshots/github_page.png)
+
+## Activity 2-5
+```
+Screenshot of Home Page
+```
+![Screenshot of Home Page](screenshots/home_page.png)
+
+```
+Screenshot of Results Page (Forms & Table)
+```
+![Screenshot of Results page - Forms & Table](screenshots/results_page.png)
+
 ## Description
 Welcome to CARTE's in-development tool for course selection at UofT. Education Pathways allows for more intelligent course searching, by matching not just the terms you search, but ones relevant to them. The more terms you search for, the more relevant your results will be! Even try searching across disciplines for the courses that best cover each.
 
