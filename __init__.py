@@ -46,7 +46,7 @@ class CourseSearchForm(Form):
     departments = SelectField('Department:', choices=departments)
     campuses = SelectField('Campus:', choices=campus)
     search = StringField('Search Terms:')
-    selectMinors= MultiCheckboxField('Desired Minors', choices=minors)
+    selectMinors= MultiCheckboxField('Desired Minors:', choices=minors)
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
