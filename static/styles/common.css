@@ -44,6 +44,11 @@ h1, h3 {
     cursor: pointer;
 }
 
+.common-page-form-checkbox {
+    list-style: none;
+    padding-left: 5px;
+}
+
 .timetable::before {
     font-family: 'FontAwesome';
     content: '\f073';
