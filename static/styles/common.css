@@ -32,3 +32,26 @@ h1, h3 {
 .common-page-submit-btn {
     margin-top: 20px;
 }
+
+.common-page-visit-btn {
+    background-color: #00204E; 
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.timetable::before {
+    font-family: 'FontAwesome';
+    content: '\f073';
+    padding-right: 10px;
+}
+
+.degree::before {
+    font-family: 'FontAwesome';
+    content: '\f19d';
+    padding-right: 10px;
+}
