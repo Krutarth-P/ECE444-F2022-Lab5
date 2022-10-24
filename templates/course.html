@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link rel="stylesheet" href="../static/styles/course.css">
 <head>
     <meta charset="UTF-8">
     <title>{{course['Name']}}</title>
 </head>
 <a href="https://carte.utoronto.ca/" target="_blank"><img src="/static/CARTE_logo.jpg" class="img-fluid" style="max-width: 25%"></a>
-<h1 style="text-align: center">Education Pathways</h1>
-
+<h1 style="text-align: center">Education Pathways</h1><br>
+<h2 style="padding-left: 20px">{{ course['Code'] }}: {{course['Name'] }}</h2>
 <body>
+
+  <div class="course-page-info-container">
+    <div class="row">
+      <div class="card">
+          <h4>Instructor Information</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare in ex sed aliquam. Suspendisse nec bibendum lacus. Donec rutrum ipsum sed metus bibendum fermentum. Vivamus sagittis ex ornare, mattis purus vel, maximus dolor. Mauris ac ante eu sapien molestie laoreet vel vitae elit. Nam sed enim nec metus sollicitudin scelerisque pellentesque tristique lectus. Phasellus vitae est nec eros scelerisque tincidunt nec nec velit. </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card">
+        <h4>Course Description</h4>
+        <p>{{ course['Course Description'] }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card">
+        <h4>Course Offerings</h4>
+        {% for t,a in zip(terms,activities) %}
+          <strong>{{t}}</strong>
+          <p>{{a | safe}}</p>
+        {%endfor%}
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <h4>Pre-Requisites</h4>
+            {% for c in pre %}
+              <p><a href='/course/{{c[0]}}'>{{c[0]}}</a></p>
+            {% endfor %} 
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+              <h4>Past Syllabus</h4>
+                <p><a href='/'>2019 Syllabus</a></p>
+                <p><a href='/}'>2004 Syllabus</a></p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <h4>Past Exams</h4>
+            <p><a href='/'>2019 Exam</a></p></a>
+            <p><a href='/'>2018 Exam</a></p>
+            <p><a href='/'>2017 Exam</a></p>
+            <p><a href='/'>2016 Exam</a></p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <h4>Eligible Minors</h4>
+          {% for c in minors %}
+                  <p>{{c}}</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
     {% for k,v in course.items() %}
         <p>
             <b>{{k}}:</b> {{v | safe}}

@@ -100,6 +100,7 @@ def create_app():
 
 
         course = df.loc[code]
+        course['Code'] = code
         #use course network graph to identify pre and post requisites
         pre = G.in_edges(code)
         post = G.out_edges(code)
