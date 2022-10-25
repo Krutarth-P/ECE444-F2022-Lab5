@@ -15,38 +15,18 @@ Screenshot of Results Page (Forms & Table)
 ```
 ![Screenshot of Results page - Forms & Table](screenshots/results_page.png)
 
-## Description
-Welcome to CARTE's in-development tool for course selection at UofT. Education Pathways allows for more intelligent course searching, by matching not just the terms you search, but ones relevant to them. The more terms you search for, the more relevant your results will be! Even try searching across disciplines for the courses that best cover each.
+## Activity 6
+```
+User Story: As a student, I want to know which courses will contribute to specific minors so that I can easily stay informed and plan my courses to meet these minor requirements.
+```
+![Screenshot Minor Filters](screenshots/prototype_filter_minors.png)
 
-Whatever year you are looking for, Education Pathways will also suggest courses in earlier years that will best help you to prepare. To get the most out of this, try searching for courses in a later year and see what is suggested for your current one.
+```
+User Story: As a student, I want to easily access all main features (search, timetable builder, degree requirements) from the landing page so that I can use the application intuitively and efficiently.
+```
+![Screenshot Buttons](screenshots/prototype_button.png)
 
-We are looking for feedback to improve Education Pathways and make it more useful for students. If you have ideas or suggestions, please email us!
-
-## Setup Instructions
-
-### With Docker
-
-
-
-## Repository files:
-
-`./Procfile ./wsgi.py` *tells gunicorn how to run the program*
-
-`./environment.yml  ./requirements.txt` *specifies python requirements for anaconda and pip respectively*
-
-`./__init__.py` *main flask code*
-
-`./readme.md` *this file*
-
-`./resources:` *contains datasets used in the program*
-
-`course_vectorizer.pickle df_processed.pickle`
-
-`course_vectors.npz       graph.pickle`
-
-`./static:` *contains any static elements of the webpage, in this case just the CARTE logo*
-`CARTE_logo.jpg`
-
-`./templates:` *contains flask templates for rendering HTML*
-
-`_formhelpers.html course.html       index.html        results.html`
+```
+User Story: As a student, I want to access detailed information for specific courses so that I can make the most informed decisions when choosing courses.
+```
+![Screenshot Course Info Page](screenshots/prototype_course_info.png)
